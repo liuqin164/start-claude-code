@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "paths": {
+      "*.js": ["./*.ts", "./*.tsx", "./*.js"]
+    },
+    "baseUrl": ".",
+    "rootDir": "."
+  },
+  "include": ["src/**/*", "preload.ts"]
+}

@@ -1,0 +1,5 @@
+node_modules/
+bun.lock
+.tmp-rg-setup/
+src/utils/vendor/ripgrep/
+*.log
