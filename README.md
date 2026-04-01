@@ -60,6 +60,17 @@ export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
 ./start.sh --model claude-sonnet-4-20250514 --dangerously-skip-permissions --bare
 ```
 
+### Use OpenAI-compatible endpoints?
+
+Not directly. This client is wired to Anthropic's Messages API semantics (`/v1/messages`, Anthropic headers, Anthropic content/tool schema), so a pure OpenAI Chat Completions endpoint is not drop-in compatible.
+
+What works in practice:
+
+- Use a gateway that accepts Anthropic-style requests and translates them to your target backend.
+- Then set `ANTHROPIC_BASE_URL` to that gateway (without `/v1`), plus the proxy-safe flags shown above.
+
+If you want true native OpenAI-protocol support inside this codebase, you'll need a larger refactor (new provider type + request/response mapping in API client, streaming parser, tool-call schema adapter, and auth/header handling).
+
 ### Specify model
 
 ```bash
