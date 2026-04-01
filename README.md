@@ -9,7 +9,7 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/JiaranI/start-claude-code.git
+git clone https://github.com/liuqin164/start-claude-code.git
 cd start-claude-code
 
 # Set API key (or use existing OAuth login from official Claude Code)
